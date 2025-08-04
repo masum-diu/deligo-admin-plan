@@ -34,7 +34,7 @@ import { useAuth } from "../../contexts/AuthContext";
 
 const menuItems = [
   { 
-    id: "dashboard", 
+    id: "home", 
     icon: <DashboardIcon />, 
     text: "Dashboard" 
   },
@@ -370,7 +370,8 @@ const CrmLayout = ({ children }) => {
         <Box sx={{ 
           flex: 1,
           overflowY: "auto",
-          p: 3
+          p: 3,
+          backgroundColor:"#eff1ee"
         }}>
           {children}
         </Box>
