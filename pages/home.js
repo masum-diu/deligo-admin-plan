@@ -9,13 +9,13 @@ import {
   Avatar,
   LinearProgress,
   Select,
-  MenuItem, Button, Table, 
-  TableBody, 
-  TableCell, 
-  TableContainer, 
-  TableHead, 
-  TableRow, 
-    Tabs,
+  MenuItem, Button, Table,
+  TableBody,
+  TableCell,
+  TableContainer,
+  TableHead,
+  TableRow,
+  Tabs,
   Tab,
 } from '@mui/material';
 import {
@@ -34,7 +34,7 @@ import MoneyOff from '@mui/icons-material/MoneyOff';
 import CreditCard from '@mui/icons-material/CreditCard';
 import RequestQuote from '@mui/icons-material/RequestQuote';
 import { Pie, Bar, Line } from 'react-chartjs-2';
-import { Chart as ChartJS, ArcElement, Tooltip, Legend, CategoryScale, LinearScale, BarElement, Title,PointElement,LineElement } from 'chart.js';
+import { Chart as ChartJS, ArcElement, Tooltip, Legend, CategoryScale, LinearScale, BarElement, Title, PointElement, LineElement } from 'chart.js';
 
 // Register ChartJS components
 ChartJS.register(CategoryScale, LinearScale, BarElement, ArcElement, Title, Tooltip, Legend,
@@ -43,66 +43,66 @@ ChartJS.register(CategoryScale, LinearScale, BarElement, ArcElement, Title, Tool
 function Home() {
   const [age, setAge] = useState(10);
   // Add this state and data in your component
-const averageRevenueData = {
-  labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul'],
-  datasets: [
-    {
-      label: 'Average Revenue per Ride',
-      data: [120, 190, 150, 220, 180, 250, 210],
-      borderColor: '#fd367b',
-      backgroundColor: 'rgba(253, 54, 123, 0.1)',
-      tension: 0.4,
-      fill: true
-    },
-    {
-      label: 'Average Revenue per Parcel',
-      data: [80, 120, 100, 150, 130, 180, 160],
-      borderColor: '#36A2EB',
-      backgroundColor: 'rgba(54, 162, 235, 0.1)',
-      tension: 0.4,
-      fill: true
-    }
-  ]
-};
+  const averageRevenueData = {
+    labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul'],
+    datasets: [
+      {
+        label: 'Average Revenue per Ride',
+        data: [120, 190, 150, 220, 180, 250, 210],
+        borderColor: '#fd367b',
+        backgroundColor: 'rgba(253, 54, 123, 0.1)',
+        tension: 0.4,
+        fill: true
+      },
+      {
+        label: 'Average Revenue per Parcel',
+        data: [80, 120, 100, 150, 130, 180, 160],
+        borderColor: '#36A2EB',
+        backgroundColor: 'rgba(54, 162, 235, 0.1)',
+        tension: 0.4,
+        fill: true
+      }
+    ]
+  };
 
   // Driver data
-const topDrivers = [
-  {
-    name: "Daniel Miller",
-    email: "driver@example.com",
-    rides: 12,
-    rating: 5.0,
-    earnings: "$941.00"
-  },
-  {
-    name: "Mike Brown",
-    email: "mikebrown.driver@example.com",
-    rides: 3,
-    rating: 4.0,
-    earnings: "$0.00"
-  },
-  {
-    name: "Thomas Rodriguez",
-    email: "thomas.driver@example.com",
-    rides: 3,
-    rating: 0.0,
-    earnings: "$0.00"
-  },
-  {
-    name: "Robert King",
-    email: "robert.driver@example.com",
-    rides: 2,
-    rating: 5.0,
-    earnings: "$0.00"
-  },
-  {
-    name: "Brian Clark",
-    email: "brian.driver@example.com",
-    rides: 2,
-    rating: 0.0,
-    earnings: "$0.00"
-  }
-];
+  const topDrivers = [
+    {
+      name: "Daniel Miller",
+      email: "driver@example.com",
+      rides: 12,
+      rating: 5.0,
+      earnings: "$941.00"
+    },
+    {
+      name: "Mike Brown",
+      email: "mikebrown.driver@example.com",
+      rides: 3,
+      rating: 4.0,
+      earnings: "$0.00"
+    },
+    {
+      name: "Thomas Rodriguez",
+      email: "thomas.driver@example.com",
+      rides: 3,
+      rating: 0.0,
+      earnings: "$0.00"
+    },
+    {
+      name: "Robert King",
+      email: "robert.driver@example.com",
+      rides: 2,
+      rating: 5.0,
+      earnings: "$0.00"
+    },
+    {
+      name: "Brian Clark",
+      email: "brian.driver@example.com",
+      rides: 2,
+      rating: 0.0,
+      earnings: "$0.00"
+    }
+  ];
   // Stats data
   // Add this to your component
   const serviceData = {
@@ -246,73 +246,73 @@ const topDrivers = [
     }
   ];
 
-// Add these near your other useState declarations
-const [currentTab, setCurrentTab] = useState('Cab');
+  // Add these near your other useState declarations
+  const [currentTab, setCurrentTab] = useState('Cab');
 
-// Status color mapping
-const statusColors = {
-  Accepted: '#4CAF50',
-  Scheduled: '#FFC107',
-  Completed: '#2196F3',
-  Cancelled: '#F44336'
-};
+  // Status color mapping
+  const statusColors = {
+    Accepted: '#4CAF50',
+    Scheduled: '#FFC107',
+    Completed: '#2196F3',
+    Cancelled: '#F44336'
+  };
 
-// Ride data by service type
-const rideData = {
-  Cab: [
-    {
-      rideNumber: '#100028',
-      driver: 'Daniel Miller',
-      email: 'driver@example.com',
-      distance: '6.639 Km',
-      status: 'Accepted'
-    },
-    {
-      rideNumber: '#100027',
-      driver: 'Daniel Miller',
-      email: 'driver@example.com',
-      distance: '6.639 Km',
-      status: 'Accepted'
-    },
-    {
-      rideNumber: '#100000',
-      driver: 'Daniel Miller',
-      email: 'driver@example.com',
-      distance: '5.6 Mile',
-      status: 'Accepted'
-    }
-  ],
-  Parcel: [
-    {
-      rideNumber: '#100010',
-      driver: 'Robert King',
-      email: 'robert.driver@example.com',
-      distance: '15 Km',
-      status: 'Scheduled'
-    }
-  ],
-  Freight: [
-    {
-      rideNumber: '#100005',
-      driver: 'Brian Clark',
-      email: 'brian.driver@example.com',
-      distance: '6 Mile',
-      status: 'Accepted'
-    }
-  ],
-  Ambulance: [{
+  // Ride data by service type
+  const rideData = {
+    Cab: [
+      {
+        rideNumber: '#100028',
+        driver: 'Daniel Miller',
+        email: 'driver@example.com',
+        distance: '6.639 Km',
+        status: 'Accepted'
+      },
+      {
+        rideNumber: '#100027',
+        driver: 'Daniel Miller',
+        email: 'driver@example.com',
+        distance: '6.639 Km',
+        status: 'Accepted'
+      },
+      {
+        rideNumber: '#100000',
+        driver: 'Daniel Miller',
+        email: 'driver@example.com',
+        distance: '5.6 Mile',
+        status: 'Accepted'
+      }
+    ],
+    Parcel: [
+      {
+        rideNumber: '#100010',
+        driver: 'Robert King',
+        email: 'robert.driver@example.com',
+        distance: '15 Km',
+        status: 'Scheduled'
+      }
+    ],
+    Freight: [
+      {
+        rideNumber: '#100005',
+        driver: 'Brian Clark',
+        email: 'brian.driver@example.com',
+        distance: '6 Mile',
+        status: 'Accepted'
+      }
+    ],
+    Ambulance: [{
       rideNumber: '#100005',
       driver: 'Brian Clark',
       email: 'brian.driver@example.com',
       distance: '6 Mile',
       status: 'Accepted'
     }]
-};
+  };
 
-// Tab change handler
-const handleTabChange = (event, newValue) => {
-  setCurrentTab(newValue);
-};
+  // Tab change handler
+  const handleTabChange = (event, newValue) => {
+    setCurrentTab(newValue);
+  };
 
   const handleChange = (event) => {
     setAge(event.target.value);
@@ -402,7 +402,7 @@ const handleTabChange = (event, newValue) => {
                         </Typography>
                       </Stack>
                     </Stack>
-                    <Button variant="outlined" color="primary" size='small' sx={{textTransform:"capitalize"}}>
+                    <Button variant="outlined" color="primary" size='small' sx={{ textTransform: "capitalize" }}>
                       {stat.seeMore}
                     </Button>
                   </Stack>
@@ -539,119 +539,119 @@ const handleTabChange = (event, newValue) => {
         </Grid>
 
 
-<Grid container spacing={3} mt={3}>
-  <Grid item xs={12} md={6}>
-    <Paper sx={{ p: 3, borderRadius: 3 }}>
-      <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 2 }}>
-        <Typography variant="h6" className='bold'>
-          Recent Rides
-        </Typography>
-        <Button variant="text" color="primary">
-          View All
-        </Button>
-      </Box>
-      
-      <Tabs 
-        value={currentTab} 
-        onChange={handleTabChange}
-        variant="scrollable"
-        scrollButtons="auto"
-        sx={{ mb: 3 }}
-      >
-        {Object.keys(rideData).map((service) => (
-          <Tab 
-            key={service} 
-            label={service} 
-            value={service} 
-            sx={{ textTransform: 'none' }}
-          />
-        ))}
-      </Tabs>
-      
-      <TableContainer>
-        <Table>
-          <TableHead>
-            <TableRow>
-              <TableCell>Ride Number</TableCell>
-              <TableCell>Driver</TableCell>
-              <TableCell align="right">Distance</TableCell>
-              <TableCell align="right">Status</TableCell>
-            </TableRow>
-          </TableHead>
-          <TableBody>
-            {rideData[currentTab].map((ride, index) => (
-              <TableRow key={index}>
-                <TableCell>{ride.rideNumber}</TableCell>
-                <TableCell>
-                  <Box sx={{ display: 'flex', alignItems: 'center' }}>
-                    <Avatar sx={{ bgcolor: '#fd367b', mr: 2 }}>
-                      {ride.driver.charAt(0)}
-                    </Avatar>
-                    <Box>
-                      <Typography variant="body2" className='bold'>{ride.driver}</Typography>
-                      <Typography variant="caption" color="textSecondary">{ride.email}</Typography>
-                    </Box>
-                  </Box>
-                </TableCell>
-                <TableCell align="right">{ride.distance}</TableCell>
-                <TableCell align="right">
-                  <Box sx={{ 
-                    display: 'inline-block',
-                    px: 1.5,
-                    py: 0.5,
-                    borderRadius: 1,
-                    backgroundColor: `${statusColors[ride.status]}20`,
-                    color: statusColors[ride.status]
-                  }}>
-                    {ride.status}
-                  </Box>
-                </TableCell>
-              </TableRow>
-            ))}
-          </TableBody>
-        </Table>
-      </TableContainer>
-    </Paper>
-  </Grid>
-  <Grid item xs={12} md={6}>
-  <Paper sx={{ p: 3, borderRadius: 3, height: '100%' }}>
-    <Typography variant="h6" className='bold'  gutterBottom>
-      Average Revenue Trends
-    </Typography>
-    <Box sx={{ maxHeight: '350px' }}>
-      <Line
-        data={averageRevenueData}
-        options={{
-          responsive: true,
-          maintainAspectRatio: false,
-          plugins: {
-            legend: {
-              position: 'top',
-            },
-            tooltip: {
-              callbacks: {
-                label: function(context) {
-                  return `${context.dataset.label}: $${context.raw.toFixed(2)}`;
-                }
-              }
-            }
-          },
-          scales: {
-            y: {
-              beginAtZero: false,
-              ticks: {
-                callback: function(value) {
-                  return `$${value}`;
-                }
-              }
-            }
-          }
-        }}
-      />
-    </Box>
-  </Paper>
-</Grid>
-</Grid>
+        <Grid container spacing={3} mt={3}>
+          <Grid item xs={12} md={6}>
+            <Paper sx={{ p: 3, borderRadius: 3 }}>
+              <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 2 }}>
+                <Typography variant="h6" className='bold'>
+                  Recent Rides
+                </Typography>
+                <Button variant="text" color="primary">
+                  View All
+                </Button>
+              </Box>
+
+              <Tabs
+                value={currentTab}
+                onChange={handleTabChange}
+                variant="scrollable"
+                scrollButtons="auto"
+                sx={{ mb: 3 }}
+              >
+                {Object.keys(rideData).map((service) => (
+                  <Tab
+                    key={service}
+                    label={service}
+                    value={service}
+                    sx={{ textTransform: 'none' }}
+                  />
+                ))}
+              </Tabs>
+
+              <TableContainer>
+                <Table>
+                  <TableHead>
+                    <TableRow>
+                      <TableCell>Ride Number</TableCell>
+                      <TableCell>Driver</TableCell>
+                      <TableCell align="right">Distance</TableCell>
+                      <TableCell align="right">Status</TableCell>
+                    </TableRow>
+                  </TableHead>
+                  <TableBody>
+                    {rideData[currentTab].map((ride, index) => (
+                      <TableRow key={index}>
+                        <TableCell>{ride.rideNumber}</TableCell>
+                        <TableCell>
+                          <Box sx={{ display: 'flex', alignItems: 'center' }}>
+                            <Avatar sx={{ bgcolor: '#fd367b', mr: 2 }}>
+                              {ride.driver.charAt(0)}
+                            </Avatar>
+                            <Box>
+                              <Typography variant="body2" className='bold'>{ride.driver}</Typography>
+                              <Typography variant="caption" color="textSecondary">{ride.email}</Typography>
+                            </Box>
+                          </Box>
+                        </TableCell>
+                        <TableCell align="right">{ride.distance}</TableCell>
+                        <TableCell align="right">
+                          <Box sx={{
+                            display: 'inline-block',
+                            px: 1.5,
+                            py: 0.5,
+                            borderRadius: 1,
+                            backgroundColor: `${statusColors[ride.status]}20`,
+                            color: statusColors[ride.status]
+                          }}>
+                            {ride.status}
+                          </Box>
+                        </TableCell>
+                      </TableRow>
+                    ))}
+                  </TableBody>
+                </Table>
+              </TableContainer>
+            </Paper>
+          </Grid>
+          <Grid item xs={12} md={6}>
+            <Paper sx={{ p: 3, borderRadius: 3, height: '100%' }}>
+              <Typography variant="h6" className='bold' gutterBottom>
+                Average Revenue Trends
+              </Typography>
+              <Box sx={{ height: '350px' }}>
+                <Line
+                  data={averageRevenueData}
+                  options={{
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                      legend: {
+                        position: 'top',
+                      },
+                      tooltip: {
+                        callbacks: {
+                          label: function (context) {
+                            return `${context.dataset.label}: $${context.raw.toFixed(2)}`;
+                          }
+                        }
+                      }
+                    },
+                    scales: {
+                      y: {
+                        beginAtZero: false,
+                        ticks: {
+                          callback: function (value) {
+                            return `$${value}`;
+                          }
+                        }
+                      }
+                    }
+                  }}
+                />
+              </Box>
+            </Paper>
+          </Grid>
+        </Grid>
       </Box>
     </CrmLayout>
   );
