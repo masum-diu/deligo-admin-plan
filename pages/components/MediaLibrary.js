@@ -29,7 +29,7 @@ function MediaLibrary({
   };
 
   return (
-    <Box sx={{ p: 3 }}>
+    <Box >
       <Stack direction="row" alignItems="center" spacing={1} mb={2}>
         <Typography variant="h4" fontWeight="bold">
           {title}
