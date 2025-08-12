@@ -11,7 +11,7 @@ import {
   List,
   ListItem,
   ListItemText,
-  ListItemIcon, 
+  ListItemIcon,
   Avatar,
   Collapse
 } from "@mui/material";
@@ -33,24 +33,24 @@ import { useState } from "react";
 import { useAuth } from "../../contexts/AuthContext";
 
 const menuItems = [
-  { 
-    id: "home", 
-    icon: <DashboardIcon />, 
-    text: "Dashboard" 
+  {
+    id: "home",
+    icon: <DashboardIcon />,
+    text: "Dashboard"
   },
-  { 
-    id: "chats", 
-    icon: <ChatIcon />, 
-    text: "Chats" 
+  {
+    id: "chats",
+    icon: <ChatIcon />,
+    text: "Chats"
   },
-  { 
-    id: "media", 
-    icon: <ImageIcon />, 
-    text: "Media" 
+  {
+    id: "media",
+    icon: <ImageIcon />,
+    text: "Media"
   },
-  { 
-    id: "cab", 
-    icon: <DirectionsCarIcon />, 
+  {
+    id: "cab",
+    icon: <DirectionsCarIcon />,
     text: "Cab",
     subItems: [
       { id: "cab-bookings", text: "Bookings" },
@@ -59,9 +59,9 @@ const menuItems = [
       { id: "cab-routes", text: "Routes" }
     ]
   },
-  { 
-    id: "freight", 
-    icon: <LocalShippingIcon />, 
+  {
+    id: "freight",
+    icon: <LocalShippingIcon />,
     text: "Freight",
     subItems: [
       { id: "freight-orders", text: "Orders" },
@@ -70,9 +70,9 @@ const menuItems = [
       { id: "freight-pricing", text: "Pricing" }
     ]
   },
-  { 
-    id: "parcel", 
-    icon: <InventoryIcon />, 
+  {
+    id: "parcel",
+    icon: <InventoryIcon />,
     text: "Parcel",
     subItems: [
       { id: "parcel-orders", text: "Orders" },
@@ -81,9 +81,9 @@ const menuItems = [
       { id: "parcel-tracking", text: "Tracking" }
     ]
   },
-  { 
-    id: "rides", 
-    icon: <DirectionsBikeIcon />, 
+  {
+    id: "rides",
+    icon: <DirectionsBikeIcon />,
     text: "Rides",
     subItems: [
       { id: "ride-requests", text: "Requests" },
@@ -92,9 +92,9 @@ const menuItems = [
       { id: "ride-pricing", text: "Pricing" }
     ]
   },
-  { 
-    id: "users", 
-    icon: <PeopleIcon />, 
+  {
+    id: "users",
+    icon: <PeopleIcon />,
     text: "Users",
     subItems: [
       { id: "user-list", text: "All Users" },
@@ -103,9 +103,9 @@ const menuItems = [
       { id: "user-admins", text: "Admins" }
     ]
   },
-  { 
-    id: "riders", 
-    icon: <TwoWheelerIcon />, 
+  {
+    id: "riders",
+    icon: <TwoWheelerIcon />,
     text: "Riders",
     subItems: [
       { id: "rider-list", text: "All Riders" },
@@ -152,7 +152,7 @@ const CrmLayout = ({ children }) => {
   };
 
   return (
-    <Box sx={{ 
+    <Box sx={{
       width: "100%",
       height: "100vh",
       overflow: "hidden",
@@ -161,7 +161,7 @@ const CrmLayout = ({ children }) => {
       {/* Sidebar */}
       <Box
         sx={{
-          backgroundColor: "#fd367b",
+          backgroundColor: "#DC3173",
           width: "300px",
           display: "flex",
           flexDirection: "column",
@@ -169,7 +169,7 @@ const CrmLayout = ({ children }) => {
         }}
       >
         {/* Logo */}
-        <Box sx={{ 
+        <Box sx={{
           px: 3.5,
           pt: 3,
           pb: 2,
@@ -195,7 +195,7 @@ const CrmLayout = ({ children }) => {
         </Box>
 
         {/* Scrollable Menu Items */}
-        <Box sx={{ 
+        <Box sx={{
           flex: 1,
           overflowY: "auto",
           px: 2,
@@ -262,8 +262,8 @@ const CrmLayout = ({ children }) => {
                             pl: 4,
                             cursor: "pointer",
                             color: isSelected(subItem.id) ? "#fff" : "#fff",
-                            backgroundColor: isSelected(subItem.id) 
-                              ? "#ffffff40" 
+                            backgroundColor: isSelected(subItem.id)
+                              ? "#ffffff40"
                               : "transparent",
                             "&:hover": {
                               backgroundColor: "rgba(255, 255, 255, 0.1)",
@@ -293,14 +293,14 @@ const CrmLayout = ({ children }) => {
       </Box>
 
       {/* Main Content Area */}
-      <Box sx={{ 
+      <Box sx={{
         flex: 1,
         display: "flex",
         flexDirection: "column",
         overflow: "hidden"
       }}>
         {/* Top Bar */}
-        <Box sx={{ 
+        <Box sx={{
           backgroundColor: "#fff",
           py: 2,
           px: 3,
@@ -367,7 +367,7 @@ const CrmLayout = ({ children }) => {
         </Box>
 
         {/* Page Content - Scrollable Area */}
-        <Box sx={{ 
+        <Box sx={{
           flex: 1,
           overflowY: "auto",
           p: 3,

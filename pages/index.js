@@ -57,7 +57,7 @@ const Login = () => {
   return (
     <Grid container spacing={0}>
       <Grid
-         bgcolor={"#f2f2f2"}
+         bgcolor={"#DC3173"}
         // color={"#FFFF"}
         item
         xs={12}
@@ -69,7 +69,7 @@ const Login = () => {
           component={Paper}
           elevation={1}
           spacing={3}
-          sx={{ width: "90%", p: 2, maxWidth: "500px", mx: "auto", borderRadius: 2, backgroundColor: "#fd367b" }}
+          sx={{ width: "90%", p: 2, maxWidth: "500px", mx: "auto", borderRadius: 2, backgroundColor: "#DC3173" }}
         >
           <Stack
 
