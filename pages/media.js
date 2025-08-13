@@ -3,7 +3,6 @@ import CrmLayout from './components/CrmLayout';
 import MediaLibrary from './components/MediaLibrary';
 import MediaTable from './components/MediaTable';
 import { mediaFiles } from '../data/mediaFiles';
-
 function Media() {
   const [viewMode, setViewMode] = useState('list');
   const [searchQuery, setSearchQuery] = useState('');
